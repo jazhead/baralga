@@ -6,18 +6,25 @@ import de.jazhead.baralgafx.dispatcher.CloseDispatcher;
 import de.jazhead.baralgafx.event.CloseEvent;
 import de.jazhead.baralgafx.facade.PresentationFacade;
 import de.jazhead.baralgafx.listener.CloseListener;
+import javafx.embed.swing.SwingNode;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
+import org.apache.log4j.Logger;
 import org.remast.baralga.gui.dialogs.ManageProjectsDialog;
 import org.remast.baralga.gui.model.PresentationModel;
+import org.remast.baralga.gui.model.ProjectActivityStateException;
+import org.remast.baralga.gui.panels.ReportPanel;
 
 import javax.swing.*;
 
 public class MainController implements CloseListener {
-    protected final PresentationModel model;
+
+    private static final Logger LOG = Logger.getLogger(MainController.class);
 
     private static MainController instance;
+
+    protected final PresentationModel model;
 
     public JFrame frame;
 
@@ -32,6 +39,9 @@ public class MainController implements CloseListener {
 
     @FXML
     public MenuItem editProjects;
+
+    @FXML
+    public SwingNode activityTableNode;
 
     public MainController() {
         instance = this;
@@ -55,6 +65,8 @@ public class MainController implements CloseListener {
             // TODO: 26.11.2016 update projects
         });
 
+        activityTableNode.setContent(new ReportPanel(this.model));
+
     }
 
     public static MainController getInstance() {
@@ -63,6 +75,14 @@ public class MainController implements CloseListener {
 
     @Override
     public void onClose(final CloseEvent event) {
+
+        try {
+            if (model.isActive()) {
+                model.stop();
+            }
+        } catch (final ProjectActivityStateException e) {
+            LOG.warn("Failure while close application", e);
+        }
         frame.dispose();
     }
 }

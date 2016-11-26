@@ -14,20 +14,16 @@ public class ProjectSelector extends AbstractControl {
     @FXML
     void initialize() {
 
-        assert projectSelector != null : "fx:id=\"taskSelector\" was not injected: check your FXML file 'RootLayout.fxml'.";
         this.update();
+        this.initProjectSelector();
     }
 
     private void initProjectSelector() {
+        projectSelector.getSelectionModel().select(this.model.getSelectedProject());
 
-        // TODO: 26.11.2016 tooltip text
-
-        final ObservableList<Project> projects = getProjectList();
-        projectSelector.setItems(projects);
-
-        projectSelector.valueProperty().addListener((observable, oldValue, newValue) -> {
-            this.model.changeProject(observable.getValue());
-            this.mainController.descriptionTextArea.setText("");
+        projectSelector.setOnAction(event -> {
+            model.changeProject(projectSelector.getSelectionModel().getSelectedItem());
+            mainController.descriptionTextArea.setText("");
         });
     }
 
