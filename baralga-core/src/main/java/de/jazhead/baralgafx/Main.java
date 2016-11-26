@@ -1,5 +1,7 @@
 package de.jazhead.baralgafx;
 
+import de.jazhead.baralgafx.dispatcher.CloseDispatcher;
+import de.jazhead.baralgafx.event.CloseEvent;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +21,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
 
+        stage.setOnCloseRequest(event -> CloseDispatcher.notifyListeners(new CloseEvent()));
     }
 
     public static void main(final String[] args) {

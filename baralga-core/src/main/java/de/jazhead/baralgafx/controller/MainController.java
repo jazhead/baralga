@@ -2,7 +2,10 @@ package de.jazhead.baralgafx.controller;
 
 import de.jazhead.baralgafx.controller.control.ProjectSelector;
 import de.jazhead.baralgafx.controller.control.TimerButton;
+import de.jazhead.baralgafx.dispatcher.CloseDispatcher;
+import de.jazhead.baralgafx.event.CloseEvent;
 import de.jazhead.baralgafx.facade.PresentationFacade;
+import de.jazhead.baralgafx.listener.CloseListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
@@ -11,7 +14,7 @@ import org.remast.baralga.gui.model.PresentationModel;
 
 import javax.swing.*;
 
-public class MainController {
+public class MainController implements CloseListener {
     protected final PresentationModel model;
 
     private static MainController instance;
@@ -33,6 +36,7 @@ public class MainController {
     public MainController() {
         instance = this;
         this.model = PresentationFacade.getInstance().getModel();
+        CloseDispatcher.addListener(this);
     }
 
     @FXML
@@ -55,5 +59,10 @@ public class MainController {
 
     public static MainController getInstance() {
         return instance;
+    }
+
+    @Override
+    public void onClose(final CloseEvent event) {
+        frame.dispose();
     }
 }
