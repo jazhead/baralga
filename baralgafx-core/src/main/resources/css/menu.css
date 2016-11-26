@@ -1,0 +1,27 @@
+.menu#exportMenu > .label {
+    -fx-graphic: url('/icons/export-menu.png');
+}
+
+.menu-item#exportExcel > .label {
+    -fx-graphic: url('/icons/gnome-mime-application-vnd.ms-excel.png');
+}
+
+.menu-item#exportICal > .label {
+    -fx-graphic: url('/icons/stock_calendar-view-week.png');
+}
+
+.menu-item#exportCsv > .label {
+    -fx-graphic: url('/icons/gnome-mime-text.png');
+}
+
+.menu-item#exportDataBackup > .label {
+    -fx-graphic: url('/icons/gnome-mime-application-vnd.ms-excel.png');
+}
+
+.menu#importMenu > .label {
+    -fx-graphic: url('/icons/import-menu.png');
+}
+
+.menu-item#importDataBackup > .label {
+    -fx-graphic: url('/icons/gnome-mime-application-vnd.ms-excel.png');
+}

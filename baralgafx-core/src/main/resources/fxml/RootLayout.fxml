@@ -1,35 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.embed.swing.*?>
-<?import java.lang.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.embed.swing.SwingNode?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-
 <BorderPane prefHeight="709.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jazhead.baralgafx.controller.MainController">
     <top>
-        <MenuBar BorderPane.alignment="CENTER">
-            <menus>
-                <Menu mnemonicParsing="false" text="File">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Close" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Delete" />
-                        <MenuItem fx:id="editProjects" mnemonicParsing="false" text="Edit Projects" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
+        <fx:include fx:id="menu" source="menu/Menu.fxml"/>
     </top>
     <center>
         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
@@ -61,7 +39,7 @@
                         </VBox>
                         <TextArea fx:id="descriptionTextArea">
                             <HBox.margin>
-                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                <Insets bottom="5.0" left="5.0" right="15.0" top="15.0"/>
                             </HBox.margin>
                         </TextArea>
                     </children>

@@ -19,6 +19,7 @@ public class Main extends Application {
         final Scene scene = new Scene(root);
         stage.setTitle("BaralgaFX");
         scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/css/menu.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
 

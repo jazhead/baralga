@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<MenuBar xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="de.jazhead.baralgafx.controller.menu.MenuController">
+    <menus>
+        <Menu mnemonicParsing="false" text="File">
+            <items>
+                <Menu fx:id="exportMenu" mnemonicParsing="false" text="Export">
+                    <items>
+                        <MenuItem fx:id="exportExcel" mnemonicParsing="false" text="MS-Excel"/>
+                        <MenuItem fx:id="exportICal" mnemonicParsing="false" text="iCal"/>
+                        <MenuItem fx:id="exportCsv" mnemonicParsing="false" text="CSV"/>
+                        <MenuItem fx:id="exportDataBackup" mnemonicParsing="false" text="Data Backup"/>
+                    </items>
+                </Menu>
+                <Menu fx:id="importMenu" mnemonicParsing="false" text="Import">
+                    <items>
+                        <MenuItem fx:id="importDataBackup" mnemonicParsing="false" text="Data Backup"/>
+                    </items>
+                </Menu>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <MenuItem mnemonicParsing="false" text="Close"/>
+            </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                <MenuItem mnemonicParsing="false" text="Undo"/>
+                <MenuItem mnemonicParsing="false" text="Redo"/>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <MenuItem fx:id="editProjects" mnemonicParsing="false" text="Edit Projects"/>
+                <MenuItem mnemonicParsing="false" text="Add activity"/>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <MenuItem mnemonicParsing="false" text="Settings"/>
+            </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+            <items>
+                <MenuItem mnemonicParsing="false" text="About"/>
+            </items>
+        </Menu>
+    </menus>
+</MenuBar>
