@@ -32,19 +32,10 @@
             <children>
                 <HBox alignment="CENTER" prefHeight="238.0" prefWidth="600.0">
                     <children>
-                        <VBox alignment="CENTER" prefHeight="238.0" prefWidth="227.0">
+                        <VBox alignment="TOP_CENTER">
                             <children>
-                                <Button fx:id="timerButton" mnemonicParsing="false" prefHeight="20.0" prefWidth="120.0"
-                                        text="Button">
-                                    <VBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                    </VBox.margin>
-                                </Button>
-                                <ComboBox fx:id="projectSelector" prefHeight="25.0" prefWidth="120.0">
-                                    <VBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                    </VBox.margin>
-                                </ComboBox>
+                                <fx:include fx:id="timerButton" source="control/TimerButton.fxml"/>
+                                <fx:include fx:id="projectSelector" source="control/ProjectSelector.fxml"/>
                                 <HBox alignment="CENTER">
                                     <children>
                                         <Label text="Label">
