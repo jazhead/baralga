@@ -1,11 +1,12 @@
 package de.jazhead.baralgafx.controller.control;
 
+import de.jazhead.baralgafx.controller.AbstractController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import org.apache.log4j.Logger;
 import org.remast.baralga.gui.model.ProjectActivityStateException;
 
-public class TimerButton extends AbstractControl {
+public class TimerButton extends AbstractController {
 
     private static final Logger LOG = Logger.getLogger(TimerButton.class);
 

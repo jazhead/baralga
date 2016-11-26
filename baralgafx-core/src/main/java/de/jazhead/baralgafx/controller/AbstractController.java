@@ -1,15 +1,14 @@
-package de.jazhead.baralgafx.controller.control;
+package de.jazhead.baralgafx.controller;
 
-import de.jazhead.baralgafx.controller.MainController;
 import de.jazhead.baralgafx.facade.PresentationFacade;
 import org.remast.baralga.gui.model.PresentationModel;
 
-abstract class AbstractControl {
+public abstract class AbstractController {
 
     protected final PresentationModel model;
     protected final MainController mainController;
 
-    AbstractControl() {
+    protected AbstractController() {
         this.model = PresentationFacade.getInstance().getModel();
         this.mainController = MainController.getInstance();
     }

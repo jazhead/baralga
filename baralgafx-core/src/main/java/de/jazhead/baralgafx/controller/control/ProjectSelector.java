@@ -1,12 +1,13 @@
 package de.jazhead.baralgafx.controller.control;
 
+import de.jazhead.baralgafx.controller.AbstractController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import org.remast.baralga.model.Project;
 
-public class ProjectSelector extends AbstractControl {
+public class ProjectSelector extends AbstractController {
 
     @FXML
     public ComboBox<Project> projectSelector;
