@@ -5,34 +5,70 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<BorderPane prefHeight="709.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jazhead.baralgafx.controller.MainController">
+<BorderPane prefHeight="709.0" prefWidth="600.0" style="-fx-border-width: 2px; -fx-border-color: black;"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="de.jazhead.baralgafx.controller.MainController">
     <top>
         <fx:include fx:id="menu" source="menu/Menu.fxml"/>
     </top>
     <center>
         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <children>
+                <ToolBar prefHeight="40.0" prefWidth="200.0">
+                    <items>
+                        <Button mnemonicParsing="false" text="Button"/>
+                        <Button mnemonicParsing="false" text="Button"/>
+                        <Button mnemonicParsing="false" text="Button"/>
+                        <Separator orientation="VERTICAL"/>
+                        <Button mnemonicParsing="false" text="Button"/>
+                        <Button mnemonicParsing="false" text="Button"/>
+                    </items>
+                </ToolBar>
                 <HBox alignment="CENTER" prefHeight="238.0" prefWidth="600.0">
                     <children>
                         <VBox alignment="TOP_CENTER">
                             <children>
                                 <fx:include fx:id="timerButton" source="control/TimerButton.fxml" />
                                 <fx:include fx:id="projectSelector" source="control/ProjectSelector.fxml" />
-                                <HBox alignment="CENTER">
+                                <GridPane alignment="BASELINE_LEFT" prefHeight="50.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="ALWAYS" prefWidth="100"/>
+                                        <ColumnConstraints hgrow="ALWAYS"/>
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints vgrow="ALWAYS"/>
+                                        <RowConstraints vgrow="ALWAYS"/>
+                                    </rowConstraints>
                                     <children>
-                                        <Label text="Label">
-                                            <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                            </padding>
+                                        <Label alignment="CENTER" text="Label:">
+                                            <GridPane.margin>
+                                                <Insets bottom="5.0" top="5.0"/>
+                                            </GridPane.margin>
                                         </Label>
-                                        <Label prefHeight="17.0" prefWidth="41.0" text="Label">
-                                            <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                            </padding>
+                                        <TextField GridPane.columnIndex="1">
+                                            <GridPane.margin>
+                                                <Insets bottom="5.0" top="5.0"/>
+                                            </GridPane.margin>
+                                        </TextField>
+                                        <Label alignment="CENTER" text="Duration:" GridPane.rowIndex="1">
+                                            <GridPane.margin>
+                                                <Insets bottom="5.0" top="5.0"/>
+                                            </GridPane.margin>
+                                        </Label>
+                                        <Label alignment="BASELINE_LEFT" text="Label" GridPane.columnIndex="1"
+                                               GridPane.rowIndex="1">
+                                            <GridPane.margin>
+                                                <Insets bottom="5.0" top="5.0"/>
+                                            </GridPane.margin>
                                         </Label>
                                     </children>
                                     <VBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                        <Insets left="25.0" right="25.0"/>
+                                    </VBox.margin>
+                                </GridPane>
+                                <HBox alignment="CENTER">
+                                    <VBox.margin>
+                                        <Insets bottom="0.0" left="0.0" right="0.0" top="0.0"/>
                                     </VBox.margin>
                                 </HBox>
                             </children>
@@ -52,7 +88,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </VBox.margin>
                 </Label>
-            <SwingNode fx:id="activityTableNode" />
+                <SwingNode fx:id="activityTableNode"/>
                 <HBox alignment="CENTER" prefHeight="59.0" prefWidth="600.0" visible="false">
                     <children>
                         <ComboBox prefWidth="150.0">
