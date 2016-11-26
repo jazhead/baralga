@@ -51,6 +51,10 @@ public class MainController implements CloseListener {
         frame.toFront();
         frame.setAlwaysOnTop(true);
 
+        descriptionTextArea.textProperty().addListener((observable, oldValue, newValue) -> {
+            this.model.setDescription(newValue);
+        });
+
         activityTableNode.setContent(new ReportPanel(this.model));
     }
 

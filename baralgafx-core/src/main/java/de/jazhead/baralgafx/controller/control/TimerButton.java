@@ -47,8 +47,8 @@ public class TimerButton extends AbstractController {
 
         if (this.model.isActive()) {
             this.mainController.projectSelectorController.projectSelector.setDisable(false);
-            this.mainController.descriptionTextArea.setText("");
             model.stop();
+            this.mainController.descriptionTextArea.setText("");
             startButton.toFront();
         } else {
             this.mainController.projectSelectorController.projectSelector.setDisable(true);
