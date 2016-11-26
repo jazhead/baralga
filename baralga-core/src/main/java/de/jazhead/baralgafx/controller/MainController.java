@@ -51,7 +51,7 @@ public class MainController implements CloseListener {
 
             final ManageProjectsDialog manageProjectsDialog = new ManageProjectsDialog(frame, model);
             manageProjectsDialog.setVisible(true);
-
+            projectSelectorController.update();
             // TODO: 26.11.2016 update projects
         });
 

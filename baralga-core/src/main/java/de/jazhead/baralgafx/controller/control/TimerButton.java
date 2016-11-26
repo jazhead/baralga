@@ -50,4 +50,9 @@ public class TimerButton extends AbstractControl {
         timerButton.setText("");
         timerButton.setGraphic(new ImageView(ICON_START_DISABLED));
     }
+
+    @Override
+    public void update() {
+
+    }
 }

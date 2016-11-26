@@ -13,4 +13,6 @@ abstract class AbstractControl {
         this.model = PresentationFacade.getInstance().getModel();
         this.mainController = MainController.getInstance();
     }
+
+    public abstract void update();
 }
