@@ -18,6 +18,7 @@ public class Main extends Application {
         final Parent root = FXMLLoader.load(getClass().getResource("/fxml/RootLayout.fxml"));
         final Scene scene = new Scene(root);
         stage.setTitle("BaralgaFX");
+        scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
 

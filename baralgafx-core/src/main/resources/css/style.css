@@ -1,0 +1,15 @@
+.button#startButton {
+    -fx-graphic: url('/icons/Play-Disabled-icon.png');
+}
+
+.button#startButton:hover {
+    -fx-graphic: url('/icons/Play-Hot-icon.png');
+}
+
+.button#stopButton {
+    -fx-graphic: url('/icons/Stop-Disabled-icon.png');
+}
+
+.button#stopButton:hover {
+    -fx-graphic: url('/icons/Stop-Normal-Blue-icon.png');
+}

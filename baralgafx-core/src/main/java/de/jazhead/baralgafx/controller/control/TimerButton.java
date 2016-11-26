@@ -54,8 +54,6 @@ public class TimerButton extends AbstractControl {
             model.start();
             stopButton.toFront();
         }
-        timerButton.setText("");
-        timerButton.setGraphic(new ImageView(ICON_START_DISABLED));
     }
 
     @Override
