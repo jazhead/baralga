@@ -11,26 +11,27 @@ public class PresentationFacade {
 
     private PresentationModel model;
 
+    private PresentationFacade() {
+
+        try {
+            this.model = initModel();
+        } catch (final SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static PresentationFacade getInstance() {
 
         if (instance == null) {
 
             instance = new PresentationFacade();
-            try {
-                instance.model = initModel();
-            } catch (final SQLException e) {
-                e.printStackTrace();
-            }
-
         }
 
         return instance;
     }
 
     private static PresentationModel initModel() throws SQLException {
-//        debug("Initializing model..."); //$NON-NLS-1$
 
-        // Initialize with new site
         final PresentationModel model = new PresentationModel();
 
         final BaralgaDAO dao = new BaralgaDAO();
